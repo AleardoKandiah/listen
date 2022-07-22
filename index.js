@@ -85,6 +85,9 @@ else {
             // otherwise increase bot thinking time for slash command execution
             // discord bot wait time is 3 seconds before inability to respond due to cmd failure
             await interaction.deferReply()
+            await slashcmd.run({ client, interaction })
         }
+        handleCommand()
     })
+    client.login(TOKEN)
 }
