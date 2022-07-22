@@ -71,5 +71,13 @@ else {
     client.on("ready", () => {
         console.log(`Logged in as ${client.user.tag}`)
     })
-    
+    client.on("interactionCreate", (interaction) => {
+        async function handleCommand () {
+            // ignore anything that is not a slash cmd
+            if (!interaction.isCommand()) return
+            
+            // otherwise execute slash cmd from discord slash cmd collection by name of interaction
+            const slashcmd = client.slashcommands.get(interaction.commandName)
+        }
+    })
 }
