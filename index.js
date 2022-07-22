@@ -81,6 +81,10 @@ else {
             
             // for when slash cmd does not exist
             if (!slashcmd) interaction.reply("Not a valid slash command!")
+
+            // otherwise increase bot thinking time for slash command execution
+            // discord bot wait time is 3 seconds before inability to respond due to cmd failure
+            await interaction.deferReply()
         }
     })
 }
