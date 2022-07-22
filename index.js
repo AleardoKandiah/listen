@@ -32,8 +32,25 @@ client.player = new Player(client, {
     }
 })
 
-// create a slash commands loader
+// create a slash commands loader array that selects files that end with .js
 
 let commands = []
 
 const slashFiles = fs.readdirSync("./slash").filter(file => file.endsWith(".js"))
+// loop through files in slash directory 
+//and pull content out of the file into slashcmd
+for (const file of slashFiles) {
+    const slashcmd = require(`./slash/${file}`)
+    client.slashcommands.set(slashcmd.data.name, slashcmd)
+    // when slash cmd loaded push data
+    if (LOAD_SLASH) commands.push(slashcmd.data.toJSON())
+}
+
+// use rest API if slash cmd is true
+if (LOAD_SLASH) {
+    const rest = new REST({ version: "9" }).setToken(TOKEN)
+    console.log("Deploying slash commands")
+    // generate URL that inserts client ID and guild ID 
+    // deploy this commands in the command array
+    rest.put(Routes.applicationGuildCommands(CLIENT_ID, GUILD_ID), {body: commands })
+}
