@@ -78,6 +78,9 @@ else {
             
             // otherwise execute slash cmd from discord slash cmd collection by name of interaction
             const slashcmd = client.slashcommands.get(interaction.commandName)
+            
+            // for when slash cmd does not exist
+            if (!slashcmd) interaction.reply("Not a valid slash command!")
         }
     })
 }
