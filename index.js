@@ -2,14 +2,14 @@ const Discord = require("discord.js")
 const dotenv = require("dotenv")
 const { REST } = require("discordjs/rest")
 const { Routes } = require("discord-api-tyoes/v9") //REST and routes for slash commands
-const fs = require("fs") //file integration 
+const fs = require("fs") //file integration
 const { Player } = require("discord-player") //help manage quering in songs
 
 
 dotenv.config
 const TOKEN = process.env.TOKEN
 
-// load command allow script initialization with boolean intrepretation 
+// load command allow script initialization with boolean intrepretation
 const LOAD_SLASH = process.argv[2] == "load"
 
 const CLIENT_ID = "999620563930722314"
@@ -37,7 +37,7 @@ client.player = new Player(client, {
 let commands = []
 
 const slashFiles = fs.readdirSync("./slash").filter(file => file.endsWith(".js"))
-// loop through files in slash directory 
+// loop through files in slash directory
 //and pull content out of the file into slashcmd
 for (const file of slashFiles) {
     const slashcmd = require(`./slash/${file}`)
@@ -50,7 +50,7 @@ for (const file of slashFiles) {
 if (LOAD_SLASH) {
     const rest = new REST({ version: "9" }).setToken(TOKEN)
     console.log("Deploying slash commands")
-    // generate URL that inserts client ID and guild ID 
+    // generate URL that inserts client ID and guild ID
     // deploy this commands in the command array to the API that contains client and guild ID
     rest.put(Routes.applicationGuildCommands(CLIENT_ID, GUILD_ID), {body: commands })
     .then(() => {
@@ -64,4 +64,12 @@ if (LOAD_SLASH) {
             process.exit(1)
         }
     })
+}
+
+// handle when slash commands are NOT executed
+else {
+    client.on("ready", () => {
+        console.log(`Logged in as ${client.user.tag}`)
+    })
+    
 }
