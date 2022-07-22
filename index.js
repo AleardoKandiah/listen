@@ -51,6 +51,6 @@ if (LOAD_SLASH) {
     const rest = new REST({ version: "9" }).setToken(TOKEN)
     console.log("Deploying slash commands")
     // generate URL that inserts client ID and guild ID 
-    // deploy this commands in the command array
+    // deploy this commands in the command array to the API that contains client and guild ID
     rest.put(Routes.applicationGuildCommands(CLIENT_ID, GUILD_ID), {body: commands })
 }
