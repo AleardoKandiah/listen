@@ -53,4 +53,15 @@ if (LOAD_SLASH) {
     // generate URL that inserts client ID and guild ID 
     // deploy this commands in the command array to the API that contains client and guild ID
     rest.put(Routes.applicationGuildCommands(CLIENT_ID, GUILD_ID), {body: commands })
+    .then(() => {
+        console.log("Successfully loaded")
+        process.exit(0)
+    })
+    // if there is an error return error and stop executing code block entirely
+    .catch((err) => {
+        if(err){
+            console.log(err)
+            process.exit(1)
+        }
+    })
 }
