@@ -8,6 +8,14 @@ module.exports = {
         .setDescription("Loads songs from YouTube")
         .addSubcommand((subcommand) =>
             subcommand.setName("Song")
-            .setDescription("Loads a single song from URL")
-            .addStringOption((option) => option.setName("URL").setDescription("The song's URL").setRequired(true)))
+            .setDescription("Loads a single song from url")
+            .addStringOption((option) => option.setName("url").setDescription("The song's URL").setRequired(true))
+        )
+        // subcmd that loads whole playlisit,
+        .addSubcommand((subcommand) =>
+        subcommand
+            .setName("playlist")
+            .setDescription("Loads a playlist of songs from a URL ")
+            .addStringOption((option) => option.setName("url").setDescription("The playlist's url").setRequired(true)))
+
 }
