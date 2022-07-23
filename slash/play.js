@@ -36,5 +36,16 @@ module.exports = {
             if (!queue.connection) await queue.connection(interaction.member.voice.channel)
 
             let embed = new MessageEmbed()
+
+            // handle singular SpeechRecognitionAlternative, playlist and search
+            
+            if (interaction.options.getSubcommand() == "song"){
+
+            } else if (interaction.options.getSubcommand() == "playlist"){
+
+            } else if (interaction.options.getSubcommand() == "search") {
+                
+            }
+
         }
 }
