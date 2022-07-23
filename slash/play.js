@@ -16,6 +16,11 @@ module.exports = {
         subcommand
             .setName("playlist")
             .setDescription("Loads a playlist of songs from a URL ")
-            .addStringOption((option) => option.setName("url").setDescription("The playlist's url").setRequired(true)))
-
+            .addStringOption((option) => option.setName("url").setDescription("The playlist's url").setRequired(true))
+        )
+        //search search cmd via keywords
+        .addSubcommand((subcommand)=>
+            subcommand.setName("search").setDescription("Searches of song based on provided keyword(s)")
+            .addStringOption((option) => option.setName("search terms").setDescription("the search keyword").setRequired(true))
+        )
 }
