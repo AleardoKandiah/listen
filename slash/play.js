@@ -40,11 +40,17 @@ module.exports = {
             // handle singular SpeechRecognitionAlternative, playlist and search
             
             if (interaction.options.getSubcommand() == "song"){
-
+                let url = interaction.options.getString("url")
+                const result = await client.player.search(url, {
+                    requestBy: interaction.user,
+                    searchEngine: QueryType.YOUTUBE_VIDEO
+                })
+                if (result.tracks.length === 0)
+                    return interaction.editReply("No results")
             } else if (interaction.options.getSubcommand() == "playlist"){
 
             } else if (interaction.options.getSubcommand() == "search") {
-                
+
             }
 
         }
