@@ -9,7 +9,7 @@ module.exports = {
         .addSubcommand((subcommand) =>
             subcommand.setName("Song")
             .setDescription("Loads a single song from url")
-            .addStringOption((option) => option.setName("url").setDescription("The song's URL").setRequired(true))
+            .addStringOption((option) => option.setName("url").setDescription("The song's url").setRequired(true))
         )
         // subcmd that loads whole playlisit,
         .addSubcommand((subcommand) =>
