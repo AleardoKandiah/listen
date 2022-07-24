@@ -83,6 +83,10 @@ module.exports = {
                     .setThumbnail(song.thumbnail)
                     .setFooter({ text: `Duration: ${song.duration}`})
             }
-
+            // if queue is not currently playing, initiate play
+            if (!queue.playing) await queue.play()
+            await interaction.editReply({
+                embeds: [embed] 
+            })
         }
 }
