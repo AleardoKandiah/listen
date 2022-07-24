@@ -65,9 +65,9 @@ module.exports = {
                 const playlist = result.playlist
                 await queue.addTracks(result.tracks)
                 embed
-                    .setDescription(`**[${playlist.title}](${playlist.url})** has been added to the Queue`)
-                    .setThumbnail(song.thumbnail)
-                    .setFooter({ text: `Duration: ${song.duration}`})
+                    .setDescription(`**${result.tracks.length} songs from [${playlist.title}](${playlist.url})** have been added to the Queue`)
+                    .setThumbnail(playlist.thumbnail)
+                    .setFooter({ text: `Duration: ${playlist.duration}`})
             
                 } else if (interaction.options.getSubcommand() == "search") {
 
