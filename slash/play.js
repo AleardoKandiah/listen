@@ -12,7 +12,7 @@ module.exports = {
             .addStringOption((option) => option.setName("url").setDescription("The song's url").setRequired(true)
             )
         )
-        // subcmd that loads whole playlisit,
+        // subcmd that loads whole playlist,
         .addSubcommand((subcommand) =>
         subcommand
             .setName("playlist")
@@ -62,10 +62,10 @@ module.exports = {
                 })
                 if (result.tracks.length === 0)
                     return interaction.editReply("No results")
-                const song = result.tracks[0]
-                await queue.addTrack(song)
+                const playlist = result.playlist
+                await queue.addTracks(result.tracks)
                 embed
-                    .setDescription(`**[${song.title}](${song.url})** has been added to the Queue`)
+                    .setDescription(`**[${playlist.title}](${playlist.url})** has been added to the Queue`)
                     .setThumbnail(song.thumbnail)
                     .setFooter({ text: `Duration: ${song.duration}`})
             
