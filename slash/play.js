@@ -37,7 +37,7 @@ module.exports = {
 
             let embed = new MessageEmbed()
 
-            // handle singular SpeechRecognitionAlternative, playlist and search
+            // handle singular songs, playlist and search
             
             if (interaction.options.getSubcommand() == "song"){
                 let url = interaction.options.getString("url")
