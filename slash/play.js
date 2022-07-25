@@ -12,7 +12,7 @@ module.exports = {
             .addStringOption((option) => option.setName("url").setDescription("The song's url").setRequired(true)
             )
         )
-        // subcomd that loads whole playlist,
+        // subcommd that loads whole playlist,
         .addSubcommand((subcommand) =>
         subcommand
             .setName("playlist")
