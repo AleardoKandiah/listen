@@ -9,7 +9,7 @@ const { Player } = require("discord-player") //help manage quering in songs
 dotenv.config
 const TOKEN = process.env.TOKEN
 
-// load command allow script initialization with boolean intrepretation
+// load command allow script initialization with boolean intepretation
 const LOAD_SLASH = process.argv[2] == "load"
 
 const CLIENT_ID = "999620563930722314"
