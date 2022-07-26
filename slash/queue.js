@@ -6,4 +6,5 @@ module.exports = {
     data: new SlashCommandBuilder()
     .setName("queue")
     .setDescription("displays the current song queue")
+    .addNumberOption((option) => option.setName("page").setDescription("Page nunber of queue").setMinValue(1))
 }
