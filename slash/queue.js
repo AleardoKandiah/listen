@@ -15,5 +15,6 @@ module.exports = {
         }
 
         // otherwise check number of pages to see if options are valid or not
+        const totalPages = Math.ceil(queue.tracks.length / 10) || 1
     }
 }
