@@ -13,5 +13,7 @@ module.exports = {
         if (!queue || !queue.playing){
             return await interaction.editReplu("There are no songs in the queue")
         }
+
+        // otherwise check number of pages to see if options are valid or not
     }
 }
