@@ -11,11 +11,14 @@ module.exports = {
     run: async ({ client, interaction }) => {
         const queue = client.player.getQueue(interaction.guildId)
         if (!queue || !queue.playing){
-            return await interaction.editReplu("There are no songs in the queue")
+            return await interaction.editReply("There are no songs in the queue")
         }
 
         // otherwise check number of pages to see if options are valid or not
         const totalPages = Math.ceil(queue.tracks.length / 10) || 1
         const page = (interaction.option.getNumber("page") || 1) -1
+        
+        if (page > totalPages)
+        return interaction.editReply
     }
 }
