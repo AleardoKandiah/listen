@@ -19,6 +19,6 @@ module.exports = {
         const page = (interaction.option.getNumber("page") || 1) -1
         
         if (page > totalPages)
-        return interaction.editReply
+        return interaction.editReply(`Invalid page. There are a total of $P{}`)
     }
 }
