@@ -20,5 +20,11 @@ module.exports = {
         
         if (page > totalPages)
         return await interaction.editReply(`Invalid page. There are a total of ${totalPages} pages of songs`)
+    
+
+        // Handle display
+        const queueString = queue.slice(page * 10, + 10).map((song, i) => {
+            
+        })
     }
 }
