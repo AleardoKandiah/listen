@@ -32,7 +32,7 @@ module.exports = {
         await interaction.editReply({
             embed: [
                 new MessageEmbed()
-                    
+                    .setDescription
             ]
         })
         
