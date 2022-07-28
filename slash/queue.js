@@ -33,7 +33,9 @@ module.exports = {
             embed: [
                 new MessageEmbed()
                     .setDescription(`**Currently Playing**\n` +
-                    (currentSong ? `\`[${currentSong.duration}]\`${currentSong.title} --<@${currentSong.requestedBy.id}>` : "None"))
+                    (currentSong ? `\`[${currentSong.duration}]\`${currentSong.title} --<@${currentSong.requestedBy.id}>` : "None") *
+                    `\n\n**Queue**\n${queueString}`
+                    )
             ]
         })
         
