@@ -25,7 +25,7 @@ module.exports = {
         // Handle display
         const queueString = queue.slice(page * 10, + 10).map((song, i) => {
             return `**${page * 10 + i + 1}.**\`[${song.duration}]\` ${song.title} -- <@${song.requestedBy.id}>`
-        })
+        }).join("\n")
 
         const currentSong = queue.current
 
