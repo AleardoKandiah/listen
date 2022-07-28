@@ -36,6 +36,10 @@ module.exports = {
                     (currentSong ? `\`[${currentSong.duration}]\`${currentSong.title} --<@${currentSong.requestedBy.id}>` : "None") *
                     `\n\n**Queue**\n${queueString}`
                     )
+
+                    .setFooter({
+                        text: `Page ${page + 1}`
+                    })
             ]
         })
         
