@@ -28,6 +28,8 @@ module.exports = {
         })
 
         const currentSong = queue.current
+
+        await interaction.editReply
         
     }
 }
