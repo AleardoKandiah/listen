@@ -27,6 +27,7 @@ module.exports = {
             return `**${page * 10 + i + 1}. \`[${song.duration}]\` ${song.title} -- <@${song.requestedBy.id}>`
         })
 
+        const currentSong = queue.current
         
     }
 }
