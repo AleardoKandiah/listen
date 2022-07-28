@@ -29,7 +29,12 @@ module.exports = {
 
         const currentSong = queue.current
 
-        await interaction.editReply
+        await interaction.editReply({
+            embed: [
+                new MessageEmbed()
+                    
+            ]
+        })
         
     }
 }
