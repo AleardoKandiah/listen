@@ -32,7 +32,8 @@ module.exports = {
         await interaction.editReply({
             embed: [
                 new MessageEmbed()
-                    .setDescription(`**Currently Playing`)
+                    .setDescription(`**Currently Playing**\n` +
+                    (currentSong ? `\`[${currentSong.duration}]\`${currentSong.title} --<@${currentSong.requestedBy.id}>` : "None"))
             ]
         })
         
