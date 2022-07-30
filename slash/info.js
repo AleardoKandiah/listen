@@ -11,6 +11,9 @@ module.exports = {
         if (!queue) return await interaction.editReply("There are no songs in the queue")
  
         // create a progress bar
+        let bar = queue.createProgressBar({
+            
+        })
         await interaction.editReply(`The queue of ${queue.tracks.length} songs have been shuffled!`)
     }
 }
