@@ -15,6 +15,8 @@ module.exports = {
             queue: false,
             length: 19
         })
-        
+        await interaction.editReply({
+            embeds: [e]
+        })
     }
 }
