@@ -17,7 +17,8 @@ module.exports = {
             length: 19
         })
         await interaction.editReply({
-            embeds: [e]
+            embeds: [new MessageEmbed()
+            .setThumbnail(song.thumbnail)]
         })
     }
 }
