@@ -12,8 +12,9 @@ module.exports = {
  
         // create a progress bar
         let bar = queue.createProgressBar({
-            
+            queue: false,
+            length: 19
         })
-        await interaction.editReply(`The queue of ${queue.tracks.length} songs have been shuffled!`)
+        
     }
 }
