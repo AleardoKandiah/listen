@@ -11,7 +11,7 @@ module.exports = {
         
         if (!queue) return await interaction.editReply("There are no songs in the queue")
  
-        // create a progress bar a
+        // create a progress bar 
         let bar = queue.createProgressBar({
             queue: false,
             length: 19
