@@ -3,7 +3,7 @@ const dotenv = require("dotenv")
 const { REST } = require("discordjs/rest")
 const { Routes } = require("discord-api-tyoes/v9") //REST and routes for slash commands
 const fs = require("fs") //file integration
-const { Player } = require("discord-player") //help manage quering in songs
+const { Player } = require("discord-player") // manage quering in songs
 
 
 dotenv.config
