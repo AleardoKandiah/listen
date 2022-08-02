@@ -11,7 +11,7 @@ module.exports = {
         
         if (!queue) return await interaction.editReply("There are no songs in the queue")
 
-        queue.destroy()
+        queue.skip()
         await interaction.editReply("Bye!")
     }
 }
