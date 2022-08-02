@@ -4,7 +4,7 @@ const { SlashCommandBuilder } = require("@discordjs/builders")
 module.exports = {
     data: new SlashCommandBuilder()
         .setName("skip")
-        .setDescription("Skips the music"),
+        .setDescription("Skips the current song"),
 
     run: async ({client, interaction}) => {
         const queue = client.player.getQueue(interaction.guildId)
