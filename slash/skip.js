@@ -16,7 +16,7 @@ module.exports = {
         queue.skip()
         await interaction.editReply({
             embeds:[
-                new MessageEmbed().setDescription
+                new MessageEmbed().setDescription(`${currentSong.title} has been skipped!` ).setThumbnail(currentSong.thumbnail)
             ]        
         })
     }
