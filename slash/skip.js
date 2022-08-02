@@ -14,6 +14,10 @@ module.exports = {
         const currentSong = queue.current
 
         queue.skip()
-        await interaction.editReply("Bye!")
+        await interaction.editReply({
+            embeds:[
+                new MessageEmbed().setDescription
+            ]        
+        })
     }
 }
