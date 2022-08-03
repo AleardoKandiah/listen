@@ -4,7 +4,10 @@ const { SlashCommandBuilder } = require("@discordjs/builders")
 module.exports = {
     data: new SlashCommandBuilder()
         .setName("skipto")
-        .setDescription("Skips to a track #"),
+        .setDescription("Skips to a track #")
+        .addNumberOption((option) =>
+            option.setName("tracknumber").setDescription("The track to skip to").setMinValue(1).setRequired(true)),
+
 
     run: async ({client, interaction}) => {
         const queue = client.player.getQueue(interaction.guildId)
