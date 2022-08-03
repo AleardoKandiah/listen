@@ -4,7 +4,7 @@ const { SlashCommandBuilder } = require("@discordjs/builders")
 module.exports = {
     data: new SlashCommandBuilder()
         .setName("skipto")
-        .setDescription("stops the bot and clears the queue"),
+        .setDescription("Skips to a track #"),
 
     run: async ({client, interaction}) => {
         const queue = client.player.getQueue(interaction.guildId)
