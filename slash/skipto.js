@@ -14,7 +14,10 @@ module.exports = {
         
         if (!queue) return await interaction.editReply("There are no songs in the queue")
 
-        queue.destroy()
-        await interaction.editReply("Bye!")
+        const trackNum = interaction.option.getNumber("tracknumber")
+        if (trackNum > queue.tracks.length)
+            return await interaction.editReply("Invalid track number")
+        queue.skipTo(trackNum - 1)
+        await interaction.editReply(`Skipped ahead to track number ${trackNum}`)
     }
 }
