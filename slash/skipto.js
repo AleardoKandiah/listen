@@ -3,7 +3,7 @@ const { SlashCommandBuilder } = require("@discordjs/builders")
 
 module.exports = {
     data: new SlashCommandBuilder()
-        .setName("quit")
+        .setName("skipto")
         .setDescription("stops the bot and clears the queue"),
 
     run: async ({client, interaction}) => {
