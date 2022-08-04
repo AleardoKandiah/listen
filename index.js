@@ -18,7 +18,7 @@ const GUILD_ID = "918637381341548554"
 // initialise discord client
 const client = new Discord.Client({
     intents: [
-        "GUILDS",
+        "GUILD",
         "GUILD_VOICE_STATES"
     ]
 })
