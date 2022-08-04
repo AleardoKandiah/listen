@@ -6,7 +6,7 @@ const fs = require("fs") //file integration
 const { Player } = require("discord-player") // manage quering in songs
 
 
-dotenv.config
+dotenv.config()
 const TOKEN = process.env.TOKEN
 
 // load command allow script initialization with boolean intepretation
