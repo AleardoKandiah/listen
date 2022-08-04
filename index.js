@@ -1,7 +1,7 @@
 const Discord = require("discord.js")
 const dotenv = require("dotenv")
 const { REST } = require("@discordjs/rest")
-const { Routes } = require("discord-api-types/v9") //REST and routes for slash commands
+const { Routes } = require("@discord-api-types/v9") //REST and routes for slash commands
 const fs = require("fs") //file integration
 const { Player } = require("discord-player") // manage quering in songs
 
